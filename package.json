@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
+  "homepage": "https://fawkes11.github.io/circular-animation/",
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
     "@react-three/drei": "^10.6.1",
