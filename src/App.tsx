@@ -174,7 +174,7 @@ function App() {
     speed: { value: 1, min: 0.1, max: 5 },
   })
 
-  const { scene } = useGLTF('/assets/base.glb')
+  const { scene } = useGLTF(import.meta.env.BASE_URL + 'assets/base.glb')
 
   useMemo(() => {
     meshesRef.current = []

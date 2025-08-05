@@ -1,12 +1,18 @@
+// vite.config.js
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
 import tailwindcss from '@tailwindcss/vite'
+import react from '@vitejs/plugin-react-swc'
+import path from 'path'
 
-const repoName = 'circular-animation'
-
-export default defineConfig({
-  base: `/${repoName}/`, 
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/circular-animation/' : '/',
   plugins: [
-    tailwindcss(),
-    react()],
-})
+    react(),
+    tailwindcss()
+  ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+}))
